@@ -5,132 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Queenstel Bakery</title>
     <link rel="stylesheet" href="style.css">
-
-    <!-- For Scroll Animations -->
-    <style>
-        .reveal {
-            opacity: 0;
-            transform: translateY(60px);
-            transition: 0.7s ease;
-        }
-        .reveal.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* Fullscreen Loading Screen */
-        #loader {
-            position: fixed;
-            background: #fff8f0;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 10000;
-        }
-        #loader img {
-            width: 120px;
-            animation: bounce 1.2s infinite;
-        }
-        @keyframes bounce {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-25px); }
-        }
-
-        /* Simple Slider */
-        .slider {
-            display: flex;
-            overflow-x: auto;
-            gap: 20px;
-            scroll-snap-type: x mandatory;
-            padding: 20px;
-        }
-        .slide {
-            flex: 0 0 80%;
-            scroll-snap-align: center;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-        }
-        .slide img {
-            width: 100%;
-            height: 260px;
-            object-fit: cover;
-        }
-
-        /* WhatsApp Floating Button */
-        .whatsapp-btn {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background: #25d366;
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: white;
-            font-size: 30px;
-            text-decoration: none;
-            z-index: 9999;
-        }
-
-        /* Gallery */
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-            gap: 20px;
-            padding: 20px;
-        }
-        .gallery-grid img {
-            width: 100%;
-            border-radius: 12px;
-            object-fit: cover;
-            height: 200px;
-        }
-
-        /* Order Section */
-        .order-btn {
-            background: #ff6f61;
-            padding: 12px 25px;
-            color: white;
-            border-radius: 6px;
-            text-decoration: none;
-            font-size: 1.1rem;
-            display: inline-block;
-            margin-top: 10px;
-        }
-        .order-btn:hover {
-            background: #e65b50;
-        }
-
-        /* Footer Social Icons */
-        .social-icons {
-            margin-top: 10px;
-        }
-        .social-icons a {
-            margin: 0 8px;
-            font-size: 22px;
-            color: #ff6f61;
-            text-decoration: none;
-        }
-    </style>
 </head>
 
 <body>
 
-<!-- ✅ LOADING SCREEN -->
+<!-- ============================
+     LOADING SCREEN
+============================ -->
 <div id="loader">
-    <img src="image/logo.png" alt="Loading...">
+    <img src="images/logo.png" alt="Loading...">
 </div>
 
-<!-- ✅ HEADER -->
+<!-- ============================
+     HEADER
+============================ -->
 <header class="reveal">
-    <img src="images/logo.png" alt="Logo" class="logo">
+    <img src="images/logo.png" class="logo" alt="Queenstel Bakery Logo">
+
     <h1>Queenstel Bakery</h1>
 
     <nav>
@@ -141,77 +32,117 @@
     </nav>
 </header>
 
-<!-- ✅ HERO -->
-<section class="hero reveal">
+
+<!-- ============================
+     HERO
+============================ -->
+<section class="hero reveal" style="
+    background:url('https://images.pexels.com/photos/302680/pexels-photo-302680.jpeg') 
+    center/cover no-repeat;">
     <h2>Freshly Baked Happiness</h2>
-    <p>Experience the joy of premium cakes, pastries, breads, and desserts — baked daily with love.</p>
+    <p>Delicious cakes, pastries & breads baked daily with love.</p>
     <button onclick="document.getElementById('menu').scrollIntoView({behavior:'smooth'});">
         Explore Menu
     </button>
 </section>
 
-<!-- ✅ PRODUCT SLIDER -->
+
+<!-- ============================
+     FEATURED SLIDER
+============================ -->
 <section class="reveal">
     <h2 style="text-align:center;">Featured Delights</h2>
 
     <div class="slider">
-        <div class="slide"><img src="https://images.unsplash.com/photo-1519861531473-9200262188bf"></div>
-        <div class="slide"><img src="https://images.unsplash.com/photo-1548946526-f69e2424cf45"></div>
-        <div class="slide"><img src="https://images.unsplash.com/photo-1600093463592-5b3c02f345bd"></div>
+
+        <div class="slide">
+            <img src="https://images.pexels.com/photos/1819657/pexels-photo-1819657.jpeg" alt="">
+        </div>
+
+        <div class="slide">
+            <img src="https://images.pexels.com/photos/227432/pexels-photo-227432.jpeg" alt="">
+        </div>
+
+        <div class="slide">
+            <img src="https://images.pexels.com/photos/2434/bread-food-healthy-breakfast.jpg" alt="">
+        </div>
+
     </div>
 </section>
 
-<!-- ✅ MENU -->
+
+<!-- ============================
+     MENU SECTION
+============================ -->
 <section id="menu" class="reveal">
     <h2>Our Specials</h2>
 
     <div class="menu-grid">
+
         <div class="menu-item">
-            <img src="https://images.unsplash.com/photo-1519861531473-9200262188bf">
-            <h3>Chocolate Cupcake</h3><span>$4.50</span>
+            <img src="https://images.pexels.com/photos/227432/pexels-photo-227432.jpeg">
+            <h3>Chocolate Cupcake</h3>
+            <span>GHS80.00</span>
         </div>
 
         <div class="menu-item">
-            <img src="https://images.unsplash.com/photo-1600093463592-5b3c02f345bd">
-            <h3>Strawberry Cake</h3><span>$12.00</span>
+            <img src="https://images.pexels.com/photos/1819657/pexels-photo-1819657.jpeg">
+            <h3>Strawberry Cake</h3>
+            <span>GHS250.00</span>
         </div>
 
         <div class="menu-item">
-            <img src="https://images.unsplash.com/photo-1548946526-f69e2424cf45">
-            <h3>Fresh Bread Loaf</h3><span>$3.00</span>
+            <img src="https://images.pexels.com/photos/2434/bread-food-healthy-breakfast.jpg">
+            <h3>Fresh Bread Loaf</h3>
+            <span>GHS20.00</span>
         </div>
 
         <div class="menu-item">
-            <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587">
-            <h3>Cinnamon Rolls</h3><span>$5.00</span>
+            <img src="https://images.pexels.com/photos/291528/pexels-photo-291528.jpeg">
+            <h3>Cinnamon Rolls</h3>
+            <span>GHS15.00</span>
         </div>
+
     </div>
 </section>
 
-<!-- ✅ IMAGE GALLERY -->
+
+<!-- ============================
+     GALLERY SECTION
+============================ -->
 <section id="gallery" class="reveal">
     <h2 style="text-align:center;">Photo Gallery</h2>
 
     <div class="gallery-grid">
-        <img src="https://images.unsplash.com/photo-1549572189-47d5168f79c9">
-        <img src="https://images.unsplash.com/photo-1509440159598-4b5d2d2cbb36">
-        <img src="https://images.unsplash.com/photo-1586985289073-3be302c648de">
-        <img src="https://images.unsplash.com/photo-1509365465985-25d11c17e812">
-        <img src="https://images.unsplash.com/photo-1525755662778-989d0524087e">
-        <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587">
+
+        <img src="https://images.pexels.com/photos/2693459/pexels-photo-2693459.jpeg">
+        <img src="https://images.pexels.com/photos/205961/pexels-photo-205961.jpeg">
+        <img src="https://images.pexels.com/photos/291528/pexels-photo-291528.jpeg">
+        <img src="https://images.pexels.com/photos/376464/pexels-photo-376464.jpeg">
+        <img src="https://images.pexels.com/photos/8500/bread-food-healthy-breakfast.jpg">
+        <img src="https://images.pexels.com/photos/3659863/pexels-photo-3659863.jpeg">
+
     </div>
 </section>
 
-<!-- ✅ ORDER SECTION -->
+
+<!-- ============================
+     ORDER SECTION
+============================ -->
 <section id="order" class="reveal" style="text-align:center; padding:40px;">
     <h2>Order Your Favorite Treat</h2>
-    <p>Place your custom cake order or buy from our menu.</p>
-    
-    <a href="https://wa.me/233000000000?text=Hello%20Queenstel%20Bakery,%20I%20want%20to%20place%20an%20order." 
-       class="order-btn">Order on WhatsApp</a>
+    <p>Enjoy fresh cakes, pastries & bread — ready for pickup or delivery.</p>
+
+    <a href="https://wa.me/233249553472?text=Hello%20Queenstel%20Bakery,%20I%20want%20to%20place%20an%20order."
+       class="order-btn">
+       Order on WhatsApp
+    </a>
 </section>
 
-<!-- ✅ CONTACT -->
+
+<!-- ============================
+     CONTACT SECTION
+============================ -->
 <section id="contact" class="reveal">
     <h2>Contact Us</h2>
 
@@ -223,43 +154,33 @@
     </form>
 </section>
 
-<!-- ✅ FOOTER -->
+
+<!-- ============================
+     FOOTER
+============================ -->
 <footer>
     © 2025 Queenstel Bakery — All Rights Reserved
 
     <div class="social-icons">
-        <a href="#"><span>📸</span></a>
-        <a href="#"><span>📘</span></a>
-        <a href="#"><span>🎵</span></a>
+        <a href="#">📸</a>
+        <a href="#">📘</a>
+        <a href="#">🎵</a>
     </div>
 
     <a href="#top">Back to Top</a>
 </footer>
 
-<!-- ✅ WHATSAPP FLOATING BUTTON -->
-<a href="https://wa.me/233000000000" class="whatsapp-btn">💬</a>
 
-<!-- ✅ JAVASCRIPT -->
-<script>
-    // Loading Screen Hide
-    window.onload = function() {
-        document.getElementById('loader').style.display = 'none';
-    }
+<!-- ============================
+     FLOATING WHATSAPP BUTTON
+============================ -->
+<a href="https://wa.me/233249553472" class="whatsapp-btn">💬</a>
 
-    // Scroll Animation
-    function reveal() {
-        var reveals = document.querySelectorAll(".reveal");
-        for (var i = 0; i < reveals.length; i++) {
-            var windowHeight = window.innerHeight;
-            var elementTop = reveals[i].getBoundingClientRect().top;
-            if (elementTop < windowHeight - 80) {
-                reveals[i].classList.add("active");
-            }
-        }
-    }
-    window.addEventListener("scroll", reveal);
-</script>
+
+<!-- ============================
+     JS FILE
+============================ -->
+<script src="script.js"></script>
 
 </body>
 </html>
-
